@@ -1,0 +1,51 @@
+{
+  "name": "cypress-plugin-check",
+  "description": "Cypress Plugin Check is a custom Cypress plugin that provides a convenient way to check if an element is present before performing actions like click, type, or other Cypress commands.",
+  "version": "0.1.0",
+  "main": "src",
+  "types": "src",
+  "files": [
+    "src",
+    "commands.js"
+  ],
+  "release": {
+    "branches": [
+      "1.0",
+      {
+        "name": "master",
+        "channel": "rc",
+        "prerelease": "rc"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "cypress run",
+    "start": "npx cypress run --record --key 026ce059-c468-4451-9a3f-eaf42ce89a32",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "semantic-release": "semantic-release",
+    "badges": "npx -p dependency-version-badge update-badge cypress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lasithdilshan20/cypress-plugin-check.git"
+  },
+  "keywords": [
+    "cypress",
+    "store",
+    "variables",
+    "cypress.io",
+    "cypress-plugin",
+    "cypress-store-variables"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lasithdilshan20/cypress-plugin-check/issues"
+  },
+  "homepage": "https://github.com/lasithdilshan20/cypress-plugin-check#readme",
+  "dependencies": {
+    "cypress": "^12.14.0",
+    "semantic-release": "^21.0.5"
+  }
+}
