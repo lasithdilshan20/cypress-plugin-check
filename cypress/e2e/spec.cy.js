@@ -2,20 +2,39 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="cypress" />
 Cypress.Commands.add('checkElement', { prevSubject: false }, (selector) => {
-  cy.log('**checkElement**')
-  return cy.get('body',{log: false}).then(($body) => {
+  cy.log('**checkElement**');
+  return cy.get('body', { log: false }).then(($body) => {
     const element = $body.find(selector);
     const found = element.length > 0;
 
     if (found) {
-      return cy.wrap(element,{log: false});
+      return cy.wrap(element, { log: false });
     } else {
-      const callingCommand = ``;
-      const logMessage = `Element ${selector} not present. Command skipped. ${callingCommand}`;
+      const logMessage = `Element '${selector}' not present. Command skipped.`;
       Cypress.log({
-        name: 'customGet',
+        name: 'checkElement',
         message: logMessage,
-        displayName: 'Custom Get'
+        displayName: 'Custom checkElement'
+      });
+    }
+  });
+});
+
+Cypress.Commands.add('softAssertElement', { prevSubject: false }, (selector) => {
+  cy.log('**softAssertElement**');
+  return cy.checkElement(selector).then(($element) => {
+    if ($element.length === 0) {
+      const logMessage = `Element '${selector}' not present. Warning: Element not found.`;
+      Cypress.log({
+        name: 'softAssertElement',
+        message: logMessage,
+        displayName: 'Soft Assert Element',
+        consoleProps: () => {
+          return {
+            Selector: selector,
+            Status: 'Element not found',
+          };
+        },
       });
     }
   });
@@ -25,18 +44,11 @@ Cypress.Commands.add('checkElement', { prevSubject: false }, (selector) => {
 describe('template spec', () => {
   it('passes', () => {
     cy.visit('cypress/index.html')
+    cy.checkElement('#myButton').click();
+    cy.checkElement('#fname1').type('Alexis');
+    cy.checkElement('#lname').type('Texas');
 
-    cy.checkElement('#myButton').then(($element) => {
-      cy.wrap($element).click();
-    });
-
-    cy.checkElement('#fname1').then(($element) => {
-      cy.wrap($element).type('Alexis');
-    });
-
-    cy.checkElement('#lname').then(($element) => {
-      cy.wrap($element).type('Texas');
-    });
-
+    cy.softAssertElement('#myButton');
+    cy.softAssertElement('#fname1');
   })
 })
