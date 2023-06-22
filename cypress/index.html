@@ -4,8 +4,39 @@
     <input type="text" id="fname" name="fname" /><br />
     <label for="lname">Last name:</label><br />
     <input type="text" id="lname" name="lname" /><br /><br />
+
     <label>Disabled items</label><br />
+
     <input type="text" id="city" name="city" disabled value="Texas"><br><br>
     <input type="text" id="owner" name="owner" disabled placeholder="Alexis"><br><br>
+
+    <br><br>
+    <input type="button" id="btn" value="Button" onclick="alert('Hello World!')"><br><br>
+
+    <label for="subject">Text Area</label><br><br>
+
+    <textarea id="ta" name="subject" rows="5" cols="50"></textarea><br><br>
+
+    <label for="subject">Radio</label>
+
+    <input type="radio" name="color" id="rdored" value="#F00">
+    <input type="radio" name="color" id="rdogreen" value="#0F0">
+    <input type="radio" name="color" id="rdoblue" value="#00F">
+
+    <br />
+    <br />
+
+    <label for="subject">check box</label> <br />
+
+
+    <label for="red">Red</label>  <input type="checkbox" name="color" value="#F00" id="chk"><br />
+
+    <label for="subject">Drop Down</label><br />
+    <select id="dd" name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab" selected>Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
 </form>
 </body>
