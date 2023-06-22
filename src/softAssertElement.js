@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const warningIcon = '⚠️';
-const softAssertElementPluginSetupCommand = (name) => (selector) => {
+const softAssertElementCommand = (name) => (selector) => {
     return cy.get('body', { log: false }).then(($body) => {
         const element = $body.find(selector);
         const found = element.length > 0;
@@ -24,4 +24,4 @@ const softAssertElementPluginSetupCommand = (name) => (selector) => {
     });
 }
 
-module.exports = { softAssertElementPluginSetupCommand }
+module.exports = { softAssertElementCommand }

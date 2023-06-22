@@ -1,4 +1,4 @@
-name: Cypress plugin-store
+name: Cypress plugin-check
 on: [push]
 jobs:
   cypress-run:

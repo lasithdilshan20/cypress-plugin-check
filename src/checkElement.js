@@ -1,8 +1,7 @@
 const {getMainCommandName} = require("./mainCommand");
 const chalk = require('chalk');
 const warningIcon = '⚠️';
-const checkElementPluginSetupCommand = (name) => (selector) => {
-    getMainCommandName();
+const checkElementCommand = (name) => (selector) => {
     return cy.get('body', { log: false }).then(($body) => {
         const element = $body.find(selector);
         const found = element.length > 0;
@@ -10,7 +9,7 @@ const checkElementPluginSetupCommand = (name) => (selector) => {
         if (found) {
             return cy.wrap(element, { log: false });
         } else {
-            const logMessage = `${warningIcon } Element '${selector}' not present. Command '${currentCommand}' skipped.`;
+            const logMessage = `${warningIcon } Element '${selector}' not present. Command '${getMainCommandName()}' skipped.`;
             Cypress.log({
                 name: name,
                 message: logMessage,
@@ -20,4 +19,4 @@ const checkElementPluginSetupCommand = (name) => (selector) => {
     });
 }
 
-module.exports = { checkElementPluginSetupCommand }
+module.exports = { checkElementCommand }
