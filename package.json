@@ -1,7 +1,7 @@
 {
   "name": "cypress-plugin-check",
   "description": "Cypress Plugin Check is a custom Cypress plugin that provides a convenient way to check if an element is present before performing actions like click, type, or other Cypress commands.",
-  "version": "0.1.0",
+  "version": "0.9.9",
   "main": "src",
   "types": "src",
   "files": [
