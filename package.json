@@ -31,9 +31,7 @@
     "url": "git+https://github.com/lasithdilshan20/cypress-plugin-check.git"
   },
   "keywords": [
-    "cypress",
-    "store",
-    "variables",
+    "cypress"
     "cypress.io",
     "cypress-plugin",
     "cypress-check",
