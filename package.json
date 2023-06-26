@@ -36,7 +36,9 @@
     "variables",
     "cypress.io",
     "cypress-plugin",
-    "cypress-store-variables"
+    "cypress-check",
+    "cypress-plugin-check",
+    "cypress-softassert"
   ],
   "author": "",
   "license": "ISC",
