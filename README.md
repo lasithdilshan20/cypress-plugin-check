@@ -2,7 +2,7 @@
 
 > Cypress Plugin Check is a custom Cypress plugin that provides a convenient way to check if an element is present before performing actions like click, type, or other Cypress commands. It also supports soft assertions for gracefully handling missing elements.
 
-**Note: Only Support with CSS Selectors**
+### Note: Only Support with CSS Selectors and support cypress `click` and `type` commands ###
 
 ## Install
 
